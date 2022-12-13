@@ -9,7 +9,7 @@ describe('Authentication', () => {
       cy.visit('/')
     })
     it("SignUp to platform", () => {
-        //cy.visit("/");
+        
         cy.get("#signInOrRegister").click();
         //Login on to site.
         cy.origin(
@@ -28,7 +28,6 @@ describe('Authentication', () => {
   });
 
     it("Login to platform", () => {
-       // cy.visit("/");
         cy.get("#signInOrRegister").click();
         //Login on to site.
         cy.origin(
@@ -44,7 +43,7 @@ describe('Authentication', () => {
   });
 
   it("Sign up with existing user to platform", () => {
-    // cy.visit("/");
+    
      cy.get("#signInOrRegister").click();
      //Login on to site.
      cy.origin(
