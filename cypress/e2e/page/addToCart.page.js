@@ -11,7 +11,7 @@ addToCart(itemName){
     let addToCartBtn = `[data-item-name= '${this.applySelectorFormat(itemName)}']`
     cy.get(addToCartBtn).scrollIntoView()
     cy.wait(1500)
-    cy.get(addToCartBtn).should('be.visible').click()
+    cy.get(addToCartBtn).should('be.visible').click({force: true})
     
     
 }
