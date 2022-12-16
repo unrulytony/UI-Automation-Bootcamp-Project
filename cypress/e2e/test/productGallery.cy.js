@@ -1,5 +1,4 @@
 import Authen from '../page/authentication.page'
-import productGalleryPage from '../page/productGallery.page'
 import ProductGallery from '../page/productGallery.page'
 
 describe('Product Gallery', () => {
@@ -47,6 +46,6 @@ describe('Product Gallery', () => {
             Authen.login('test1@tester.com','Password1')
             // Assertion
             cy.wait(3000)
-           cy.get(productGalleryPage.shopNowH2).should('be.visible').and('contain.text','Shop Now')
+           cy.get(productGallery.shopNowH2).should('be.visible').and('contain.text','Shop Now')
         })
     })
