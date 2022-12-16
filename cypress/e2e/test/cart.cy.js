@@ -2,7 +2,7 @@ import Authen from '../page/authentication.page'
 import AddToCart from '../page/addToCart.page'
 import Cart from '../page/cart.page'
 
-describe('Add to cart', () => {
+describe('Cart', () => {
     beforeEach(() => {
       cy.visit('/')
     })
