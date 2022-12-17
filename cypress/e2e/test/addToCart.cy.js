@@ -10,7 +10,6 @@ describe('Add to cart', () => {
       cy.visit('/')
     })
     it("Add item to Cart", () => {
-        //cy.visit("/");
         cy.get("#signInOrRegister").click();
         //Login on to site.
         cy.origin(
@@ -25,14 +24,10 @@ describe('Add to cart', () => {
         // Assertion
         cy.get("#product-0").should('be.visible')
         AddToCart.addToCart('Quality Mousepad')
-        // cy.get('#top-cart').scrollIntoView()
-        // cy.get ('#top-cart').click()
-        //cy.get('.snipcart-item-line.snipcart-item-line--cart-edit').should('contain','Qaulity Mousepad')
         cy.get('section.snipcart-cart__content').should('be.visible')
       });
 
       it("Add multiple item to Cart", () => {
-        //cy.visit("/");
         cy.get("#signInOrRegister").click();
         //Login on to site.
         cy.origin(
@@ -42,14 +37,11 @@ describe('Add to cart', () => {
             
      
         });
-        //cy.get(Authen.SignUpTab).click();
+        
         Authen.login('test1@tester.com','Password1')
         // Assertion
         cy.get("#product-0").should('be.visible')
         AddToCart.addToCart('Quality Mousepad')
-        // cy.get('#top-cart').scrollIntoView()
-        // cy.get ('#top-cart').click()
-        //cy.get('.snipcart-item-line.snipcart-item-line--cart-edit').should('contain','Qaulity Mousepad')
         cy.get('section.snipcart-cart__content').should('be.visible')
         cy.get('.snipcart-cart-header__close-button').click()
         AddToCart.addToCart('Quality Fitted Hat')
@@ -57,7 +49,6 @@ describe('Add to cart', () => {
       });
 
       it("Increase item quantity and add to Cart", () => {
-        //cy.visit("/");
         cy.get("#signInOrRegister").click();
         //Login on to site.
         cy.origin(
@@ -67,17 +58,12 @@ describe('Add to cart', () => {
             
      
         });
-        //cy.get(Authen.SignUpTab).click();
         Authen.login('test1@tester.com','Password1')
         // Assertion
         cy.get("#product-0").should('be.visible')
         AddToCart.increaseQuantity('2')
         AddToCart.addToCart('Quality Mousepad')
-        // cy.get('#top-cart').scrollIntoView()
-        // cy.get ('#top-cart').click()
-        //cy.get('.snipcart-item-line.snipcart-item-line--cart-edit').should('contain','Qaulity Mousepad')
         cy.get('section.snipcart-cart__content').should('be.visible')
-        //cy.get('.snipcart-cart-header__close-button').click()
         cy.get('div .snipcart-item-quantity__quantity').should('be.visible').and('contain.text',2)
       });
     })

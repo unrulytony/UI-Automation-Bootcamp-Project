@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-17T13:50:11.271Z",
+    "end": "2022-12-17T13:50:37.246Z",
+    "duration": 25975,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e6a06f42-d411-42c9-9043-a0f6be07b448",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\authentication.cy.js",
+      "file": "cypress\\e2e\\test\\authentication.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2b6fd9b9-8706-4881-b7a6-dd104f0c97da",
+          "title": "Authentication",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "SignUp to platform",
+              "fullTitle": "Authentication SignUp to platform",
+              "timedOut": null,
+              "duration": 10489,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {}); // const fakeEmail = faker.internet.email();\n// const fakePassword = faker.internet.password();\ncy.get(_authentication.default.SignUpTab).click();\n_authentication.default.login(fakeEmail, fakePassword); // Assertion\n\ncy.get(\"#product-0\").should('be.visible');",
+              "err": {},
+              "uuid": "710759dc-8382-44a4-b128-c8f29a0a3a91",
+              "parentUUID": "2b6fd9b9-8706-4881-b7a6-dd104f0c97da",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login to platform",
+              "fullTitle": "Authentication Login to platform",
+              "timedOut": null,
+              "duration": 8771,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\n_authentication.default.login(fakeEmail, fakePassword); // Assertion\n\ncy.get(\"#product-0\").should('be.visible');",
+              "err": {},
+              "uuid": "6532f257-c123-46e9-afb6-f4dbf9fe93fd",
+              "parentUUID": "2b6fd9b9-8706-4881-b7a6-dd104f0c97da",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Sign up with existing user to platform",
+              "fullTitle": "Authentication Sign up with existing user to platform",
+              "timedOut": null,
+              "duration": 5935,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\ncy.get(_authentication.default.SignUpTab).click();\n_authentication.default.login(fakeEmail, fakePassword); // Assertion\n\ncy.get(_authentication.default.errorMessage).should('be.visible');",
+              "err": {},
+              "uuid": "9ec856e1-6c11-4132-9d76-c0e7adf5a11a",
+              "parentUUID": "2b6fd9b9-8706-4881-b7a6-dd104f0c97da",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "710759dc-8382-44a4-b128-c8f29a0a3a91",
+            "6532f257-c123-46e9-afb6-f4dbf9fe93fd",
+            "9ec856e1-6c11-4132-9d76-c0e7adf5a11a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25195,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

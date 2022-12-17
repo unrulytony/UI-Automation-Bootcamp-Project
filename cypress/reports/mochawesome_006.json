@@ -1,0 +1,155 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 0,
+    "pending": 0,
+    "failures": 3,
+    "start": "2022-12-17T14:00:09.446Z",
+    "end": "2022-12-17T14:02:15.659Z",
+    "duration": 126213,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8f23b66f-e888-454c-8fd9-59cd5123bec1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\productDetails.cy.js",
+      "file": "cypress\\e2e\\test\\productDetails.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb471cab-5399-4113-ac80-b34cafd8460c",
+          "title": "Product Details",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigate to alternate image of item",
+              "fullTitle": "Product Details Navigate to alternate image of item",
+              "timedOut": null,
+              "duration": 33689,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\n_authentication.default.login('test1@tester.com', 'Password1'); // Assertion\n\ncy.wait(3000);\ncy.get(_productDetails.default.firstProdImage).should('be.visible').click();\ncy.get(_productDetails.default.altImage).should('be.visible').click();\ncy.get(_productDetails.default.altImageText).should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#product-0 .chakra-image.css-2i84d9`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#product-0 .chakra-image.css-2i84d9`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/test/productDetails.cy.js:23:42)",
+                "diff": null
+              },
+              "uuid": "f14d6a11-ede9-4ac1-83fe-a7092d557a3b",
+              "parentUUID": "cb471cab-5399-4113-ac80-b34cafd8460c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add to cart from product details",
+              "fullTitle": "Product Details Add to cart from product details",
+              "timedOut": null,
+              "duration": 37843,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\n_authentication.default.login('test1@tester.com', 'Password1'); // Assertion\n\ncy.wait(3000);\ncy.get(_productDetails.default.firstProdImage).should('be.visible').click();\ncy.get(_productDetails.default.altImage).should('be.visible').click();\ncy.get(_productDetails.default.altImageText).should('be.visible');\n_addToCart.default.addToCart('Quality Fitted Hat');\ncy.get('section.snipcart-cart__content').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#product-0 .chakra-image.css-2i84d9`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#product-0 .chakra-image.css-2i84d9`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/test/productDetails.cy.js:39:46)",
+                "diff": null
+              },
+              "uuid": "7d40a302-fac9-4470-9916-845ea9709045",
+              "parentUUID": "cb471cab-5399-4113-ac80-b34cafd8460c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Navigate back to products gallery home page",
+              "fullTitle": "Product Details Navigate back to products gallery home page",
+              "timedOut": null,
+              "duration": 46455,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\n_authentication.default.login('test1@tester.com', 'Password1'); // Assertion\n\ncy.wait(3000);\ncy.get(_productDetails.default.firstProdImage).should('be.visible').click();\ncy.get(_productDetails.default.altImage).should('be.visible').click();\ncy.get(_productDetails.default.altImageText).should('be.visible');\ncy.get(_productDetails.default.backToProdBtn).should('be.visible').click();\ncy.get(_productGallery.default.productList).should('exist');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#product-0 .chakra-image.css-2i84d9`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#product-0 .chakra-image.css-2i84d9`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/test/productDetails.cy.js:58:50)",
+                "diff": null
+              },
+              "uuid": "3007bc2a-376c-4f65-97c1-b914d27ba3e4",
+              "parentUUID": "cb471cab-5399-4113-ac80-b34cafd8460c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f14d6a11-ede9-4ac1-83fe-a7092d557a3b",
+            "7d40a302-fac9-4470-9916-845ea9709045",
+            "3007bc2a-376c-4f65-97c1-b914d27ba3e4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 117987,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
