@@ -1,16 +1,15 @@
 import Authen from '../page/authentication.page'
 import FilterSort from '../page/filterSort.page';
-import ProductData from '../data/product.data';
+import Search from '../page/search.page';
 const { faker } = require('@faker-js/faker');
 
 //Declare variables 
 const fakeEmail = faker.internet.email();
-//const fakePassword = faker.internet.password();
 describe('Contact', () => {
     beforeEach(() => {
       cy.visit('/')
     })
-    it("Sort A to Z", () => {
+    it("Invalid search", () => {
         
         cy.get("#signInOrRegister").click();
         //Login on to site.
@@ -25,19 +24,14 @@ describe('Contact', () => {
         // const fakePassword = faker.internet.password();
     cy.get(Authen.SignUpTab).click();
     Authen.login(fakeEmail,'Password1')
-    FilterSort.selectSort(ProductData.sort['A to Z'])
     // Assertion
     cy.get("#product-0").should('be.visible')
-
-     // Sort data list based on name, from A to Z
-     ProductData.products.sort()
-
-     cy.get(FilterSort.itemName).each(($elem, index) => {
-         expect($elem.text()).equal(ProductData.products[index].name)
-     })
+    cy.get(Search.searchInput).should('be.visible').type('food')
+    cy.get(FilterSort.itemName).should('not.exist')
+   
     })
 
-    it("Filter by category ", () => {
+    it("Valid search", () => {
         
         cy.get("#signInOrRegister").click();
         //Login on to site.
@@ -52,19 +46,13 @@ describe('Contact', () => {
         // const fakePassword = faker.internet.password();
     cy.get(Authen.SignUpTab).click();
     Authen.login(fakeEmail,'Password1')
-    FilterSort.selectCategory(ProductData.category['Shirts'])
     // Assertion
     cy.get("#product-0").should('be.visible')
-
-     // Sort data list based on name, from A to Z
-     ProductData.products.sort()
-
-     cy.get(FilterSort.itemCategory).each(($elem, index) => {
-         expect($elem.text()).contain(ProductData.products[index].category)
-     })
+    cy.get(Search.searchInput).should('be.visible').type('pants')
+    cy.get(FilterSort.itemCategory).should('exist').and('contain.text','pants')
     })
 
-    it("High to Low ", () => {
+    it("Valid search then reset filters", () => {
         
         cy.get("#signInOrRegister").click();
         //Login on to site.
@@ -76,19 +64,14 @@ describe('Contact', () => {
      
         });
         const fakeEmail = faker.internet.email();
-        // const fakePassword = faker.internet.password();
     cy.get(Authen.SignUpTab).click();
     Authen.login(fakeEmail,'Password1')
-    FilterSort.selectSort(ProductData.sort['High to Low'])
     // Assertion
     cy.get("#product-0").should('be.visible')
-
-     // Sort data list based on price, from high to low
-     ProductData.products.sort((a, b) => b.price / a.price)
-
-     cy.get(FilterSort.itemPrice).each(($elem, index) => {
-         expect($elem.text()).equal(`$${ProductData.products[index].price}`)
-     })
-
+    cy.get(Search.searchInput).should('be.visible').type('hat')
+    cy.get(FilterSort.itemCategory).should('contain.text','hat')
+    cy.get(FilterSort.resetBtn).click()
+    cy.get(FilterSort.itemCategory).should('be.visible')
+    cy.get(Search.searchInput).should('be.empty')
     })
 })
