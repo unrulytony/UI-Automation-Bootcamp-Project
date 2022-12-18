@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-12-18T00:30:24.977Z",
+    "end": "2022-12-18T00:31:39.727Z",
+    "duration": 74750,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d7db92b1-79e6-4ea0-b02f-941e1f9d9f47",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\addToCart.cy.js",
+      "file": "cypress\\e2e\\test\\addToCart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "85af9fa6-ebaa-4e98-9c2f-027e07143c23",
+          "title": "Add to cart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add item to Cart",
+              "fullTitle": "Add to cart Add item to Cart",
+              "timedOut": null,
+              "duration": 31290,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\ncy.get(_authentication.default.SignUpTab).click();\n_authentication.default.login(fakeEmail, fakePassword); // Assertion\n\ncy.get(\"#product-0\").should('be.visible');\n_addToCart.default.addToCart('Quality Mousepad');\ncy.get('section.snipcart-cart__content').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `section.snipcart-cart__content`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `section.snipcart-cart__content`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/test/addToCart.cy.js:27:49)",
+                "diff": null
+              },
+              "uuid": "dd24ec26-7df3-4567-8ff1-1fea8cc2d4ec",
+              "parentUUID": "85af9fa6-ebaa-4e98-9c2f-027e07143c23",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add multiple item to Cart",
+              "fullTitle": "Add to cart Add multiple item to Cart",
+              "timedOut": null,
+              "duration": 23865,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\n_authentication.default.login('test1@tester.com', 'Password1'); // Assertion\n\ncy.get(\"#product-0\").should('be.visible');\n_addToCart.default.addToCart('Quality Mousepad');\ncy.get('section.snipcart-cart__content').should('be.visible');\ncy.get('.snipcart-cart-header__close-button').click();\n_addToCart.default.addToCart('Quality Fitted Hat');\ncy.get('section.snipcart-cart__content').should('be.visible');",
+              "err": {},
+              "uuid": "33379d03-61d0-458a-b358-753e445fe744",
+              "parentUUID": "85af9fa6-ebaa-4e98-9c2f-027e07143c23",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Increase item quantity and add to Cart",
+              "fullTitle": "Add to cart Increase item quantity and add to Cart",
+              "timedOut": null,
+              "duration": 19182,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\n_authentication.default.login('test1@tester.com', 'Password1'); // Assertion\n\ncy.get(\"#product-0\").should('be.visible');\n_addToCart.default.increaseQuantity('2');\n_addToCart.default.addToCart('Quality Mousepad');\ncy.get('section.snipcart-cart__content').should('be.visible');\ncy.get('div .snipcart-item-quantity__quantity').should('be.visible').and('contain.text', 2);",
+              "err": {},
+              "uuid": "07fe835f-0760-4cdb-a17d-e3e282f1ffae",
+              "parentUUID": "85af9fa6-ebaa-4e98-9c2f-027e07143c23",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "33379d03-61d0-458a-b358-753e445fe744",
+            "07fe835f-0760-4cdb-a17d-e3e282f1ffae"
+          ],
+          "failures": [
+            "dd24ec26-7df3-4567-8ff1-1fea8cc2d4ec"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 74337,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-18T00:37:46.709Z",
+    "end": "2022-12-18T00:38:27.816Z",
+    "duration": 41107,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fea522ff-7678-4c3e-8c3d-913e2ee4203f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\filterSort.cy.js",
+      "file": "cypress\\e2e\\test\\filterSort.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bf40cfdf-bec8-443d-b418-56acdf1ed967",
+          "title": "Contact",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sort A to Z",
+              "fullTitle": "Contact Sort A to Z",
+              "timedOut": null,
+              "duration": 16017,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\nconst fakeEmail = faker.internet.email(); // const fakePassword = faker.internet.password();\ncy.get(_authentication.default.SignUpTab).click();\n_authentication.default.login(fakeEmail, 'Password1');\n_filterSort.default.selectSort(_product.default.sort['A to Z']); // Assertion\n\ncy.get(\"#product-0\").should('be.visible'); // Sort data list based on name, from A to Z\n_product.default.products.sort();\ncy.get(_filterSort.default.itemName).each(($elem, index) => {\n  expect($elem.text()).equal(_product.default.products[index].name);\n});",
+              "err": {},
+              "uuid": "69cc8978-337a-40c4-960d-1aa340de3bb0",
+              "parentUUID": "bf40cfdf-bec8-443d-b418-56acdf1ed967",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Filter by category ",
+              "fullTitle": "Contact Filter by category ",
+              "timedOut": null,
+              "duration": 13276,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\nconst fakeEmail = faker.internet.email(); // const fakePassword = faker.internet.password();\ncy.get(_authentication.default.SignUpTab).click();\n_authentication.default.login(fakeEmail, 'Password1');\n_filterSort.default.selectCategory(_product.default.category['Shirts']); // Assertion\n\ncy.get(\"#product-0\").should('be.visible'); // Sort data list based on name, from A to Z\n_product.default.products.sort();\ncy.get(_filterSort.default.itemCategory).each(($elem, index) => {\n  expect($elem.text()).contain(_product.default.products[index].category);\n});",
+              "err": {},
+              "uuid": "01517eb9-ae1d-413b-8c14-98ba56070536",
+              "parentUUID": "bf40cfdf-bec8-443d-b418-56acdf1ed967",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "High to Low ",
+              "fullTitle": "Contact High to Low ",
+              "timedOut": null,
+              "duration": 9878,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\nconst fakeEmail = faker.internet.email(); // const fakePassword = faker.internet.password();\ncy.get(_authentication.default.SignUpTab).click();\n_authentication.default.login(fakeEmail, 'Password1');\n_filterSort.default.selectSort(_product.default.sort['High to Low']); // Assertion\n\ncy.get(\"#product-0\").should('be.visible'); // Sort data list based on price, from high to low\n_product.default.products.sort((a, b) => b.price / a.price);\ncy.get(_filterSort.default.itemPrice).each(($elem, index) => {\n  expect($elem.text()).equal(`$${_product.default.products[index].price}`);\n});",
+              "err": {},
+              "uuid": "41c16992-006f-46ce-95e7-a8251b4aac6b",
+              "parentUUID": "bf40cfdf-bec8-443d-b418-56acdf1ed967",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "69cc8978-337a-40c4-960d-1aa340de3bb0",
+            "01517eb9-ae1d-413b-8c14-98ba56070536",
+            "41c16992-006f-46ce-95e7-a8251b4aac6b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 39171,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

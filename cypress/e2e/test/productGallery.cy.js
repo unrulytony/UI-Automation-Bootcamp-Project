@@ -46,6 +46,6 @@ describe('Product Gallery', () => {
             Authen.login('test1@tester.com','Password1')
             // Assertion
             cy.wait(3000)
-           cy.get(productGallery.shopNowH2).should('be.visible').and('contain.text','Shop Now')
+           cy.get(ProductGallery.shopNowH2).should('be.visible').and('contain.text','Shop Now')
         })
     })

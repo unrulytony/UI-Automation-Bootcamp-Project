@@ -10,7 +10,7 @@ applySelectorFormat(itemName){
 addToCart(itemName){
     let addToCartBtn = `[data-item-name= '${this.applySelectorFormat(itemName)}']`
     cy.get(addToCartBtn).scrollIntoView()
-    cy.wait(1500)
+    cy.wait(3500)
     cy.get(addToCartBtn).should('be.visible').click({force: true})
     
     
@@ -20,7 +20,7 @@ increaseQuantity(productNum){
 
     let increaseBtn =` #product-${this.applySelectorFormat(productNum)}-increase`
     cy.get(increaseBtn).scrollIntoView()
-    cy.wait(1500)
+    cy.wait(3500)
     cy.get(increaseBtn).should('be.visible').click()
 }
 }

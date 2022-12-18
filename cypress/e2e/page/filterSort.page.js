@@ -6,7 +6,7 @@ class FilterSort{
 
     get itemName() {return("p[class='chakra-text css-1n64n71']")}
     get itemCategory() {return("span[class='css-1ccau2i']")}
-    get itemPrice() {return("p[class='chakra-text css-0']")}    
+    get itemPrice() {return(" div[class='chakra-stack css-1ieohnc'] p[class='chakra-text css-0']")}    
 
     selectSort(sort){
         cy.get(this.sortOptions).select(sort)

@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-18T00:38:41.771Z",
+    "end": "2022-12-18T00:39:32.006Z",
+    "duration": 50235,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4d0fe721-51a5-4509-9a9a-9499ac49db6d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\productDetails.cy.js",
+      "file": "cypress\\e2e\\test\\productDetails.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "08960bd8-bbd0-47e7-804a-252d31202fbd",
+          "title": "Product Details",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigate to alternate image of item",
+              "fullTitle": "Product Details Navigate to alternate image of item",
+              "timedOut": null,
+              "duration": 17000,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\n_authentication.default.login('test1@tester.com', 'Password1'); // Assertion\n\ncy.wait(3000);\ncy.get(_productDetails.default.firstProdImage).should('be.visible').click();\ncy.get(_productDetails.default.altImage).should('be.visible').click();\ncy.get(_productDetails.default.altImageText).should('be.visible');",
+              "err": {},
+              "uuid": "1fc5dfb9-216c-421c-b7e6-91ea7f4f465a",
+              "parentUUID": "08960bd8-bbd0-47e7-804a-252d31202fbd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add to cart from product details",
+              "fullTitle": "Product Details Add to cart from product details",
+              "timedOut": null,
+              "duration": 17983,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\n_authentication.default.login('test1@tester.com', 'Password1'); // Assertion\n\ncy.wait(3000);\ncy.get(_productDetails.default.firstProdImage).should('be.visible').click();\ncy.get(_productDetails.default.altImage).should('be.visible').click();\ncy.get(_productDetails.default.altImageText).should('be.visible');\n_addToCart.default.addToCart('Quality Fitted Hat');\ncy.get('section.snipcart-cart__content').should('be.visible');",
+              "err": {},
+              "uuid": "04130166-c446-4cef-b70c-6f0605497995",
+              "parentUUID": "08960bd8-bbd0-47e7-804a-252d31202fbd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Navigate back to products gallery home page",
+              "fullTitle": "Product Details Navigate back to products gallery home page",
+              "timedOut": null,
+              "duration": 14796,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#signInOrRegister\").click(); //Login on to site.\ncy.origin(\"https://dev-mlluudmotpwoldtv.us.auth0.com\", {\n  args: {}\n}, ({}) => {});\n_authentication.default.login('test1@tester.com', 'Password1'); // Assertion\n\ncy.wait(3000);\ncy.get(_productDetails.default.firstProdImage).should('be.visible').click();\ncy.get(_productDetails.default.altImage).should('be.visible').click();\ncy.get(_productDetails.default.altImageText).should('be.visible');\ncy.get(_productDetails.default.backToProdBtn).should('be.visible').click();\ncy.get(_productGallery.default.productList).should('exist');",
+              "err": {},
+              "uuid": "8e493fbb-d8df-411a-8611-8ab43c9ac7f1",
+              "parentUUID": "08960bd8-bbd0-47e7-804a-252d31202fbd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1fc5dfb9-216c-421c-b7e6-91ea7f4f465a",
+            "04130166-c446-4cef-b70c-6f0605497995",
+            "8e493fbb-d8df-411a-8611-8ab43c9ac7f1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 49779,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
